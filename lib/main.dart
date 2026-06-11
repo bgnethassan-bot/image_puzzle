@@ -381,7 +381,7 @@ class _PuzzleHomeScreenState extends State<PuzzleHomeScreen> {
   }
 }
 
-// ==================== شاشة تواصل معنا (مع بياناتك الشخصية) ====================
+// ==================== شاشة تواصل معنا ====================
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
@@ -411,7 +411,6 @@ class AboutScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // صورة رمزية
                   Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -436,7 +435,6 @@ class AboutScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  // اسم المصمم
                   const Text(
                     'Hassan Eltayeb Elshiekh',
                     style: TextStyle(
@@ -449,7 +447,6 @@ class AboutScreen extends StatelessWidget {
 
                   const SizedBox(height: 8),
 
-                  // عنوان المصمم
                   const Text(
                     'مطور تطبيقات Flutter',
                     style: TextStyle(
@@ -460,7 +457,6 @@ class AboutScreen extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // معلومات الاتصال
                   _buildContactItem(
                     context: context,
                     icon: Icons.email,
@@ -479,7 +475,6 @@ class AboutScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  // زر نسخ البريد
                   ElevatedButton.icon(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -503,7 +498,6 @@ class AboutScreen extends StatelessWidget {
 
                   const SizedBox(height: 12),
 
-                  // زر الاتصال
                   OutlinedButton.icon(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -526,7 +520,6 @@ class AboutScreen extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // حقوق الملكية
                   Text(
                     '© 2025 جميع الحقوق محفوظة',
                     style: TextStyle(
