@@ -1,16 +1,16 @@
 workflows:
-  ios-ipa-build:
-    name: Build iOS IPA (Real Device)
+  ios-build:
+    name: Build iOS App
     instance_type: mac_mini_m2
     environment:
       flutter: stable
       xcode: latest
     scripts:
-      - name: Clean previous build
+      - name: Clean
         script: flutter clean
-      - name: Get dependencies
+      - name: Install dependencies
         script: flutter pub get
-      - name: Build IPA for real device
-        script: flutter build ipa --release
+      - name: Build for device (unsigned)
+        script: flutter build ios --release --no-codesign
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/ios/iphoneos/Runner.app
