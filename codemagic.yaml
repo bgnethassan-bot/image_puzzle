@@ -1,6 +1,6 @@
 workflows:
   ios-build:
-    name: Build iOS IPA
+    name: Build iOS IPA for Device
     instance_type: mac_mini_m2
     environment:
       flutter: stable
@@ -8,8 +8,13 @@ workflows:
     scripts:
       - name: Install Flutter packages
         script: flutter pub get
-      - name: Build IPA
-        script: flutter build ipa --release
+      - name: Install pods
+        script: |
+          cd ios
+          pod install --repo-update
+          cd ..
+      - name: Build IPA for device
+        script: flutter build ipa --release --export-options-plist=ios/exportOptions.plist
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
